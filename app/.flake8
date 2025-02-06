@@ -1,0 +1,30 @@
+[flake8]
+# Max line length according to PEP8
+max-line-length = 79
+
+# Exclude files and directories from linting
+exclude =
+    .git,
+    __pycache__,
+    migrations,
+    manage.py,
+    settings.py,
+    venv,
+    .env
+
+# Select the checks that are enabled (you can customize this)
+# E101-E109: PEP8 issues
+# E701-E709: Statement issues
+# W191: Indentation with spaces (rather than tabs)
+# W503: Line break before binary operator (PEP8 issue)
+# F401: Unused import (flake8)
+# M301: Docstring issues
+select =
+    E101, E701, E702, E703, E704, E711, E712, E713, E714, E721, E722, E731, E741, E751,
+    E752, E761, E762, E771, E772, E781, E782, E791, W191, W503, F401, M301
+
+# Ignore specific warnings (optional)
+ignore =
+    E1101,  # pylint warning: AttributeError (common in Django models)
+    E1200,  # file encoding issues (not common with UTF-8)
+    W503,    # Line break before binary operator (PEP8 issue)
